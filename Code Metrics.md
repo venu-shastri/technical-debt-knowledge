@@ -22,6 +22,7 @@ int calculate(int x) {
         return 0;
     }
 }
+```
 Cyclomatic complexity: 3
 
 2. Lines of Code (LOC)
@@ -31,13 +32,11 @@ Why it matters: Large functions or files often indicate poor structure.
 
 Example:
 
-c
-Always show details
-
-Copy
+```c
 void longFunction() {
     // hundreds of lines...
 }
+```
 3. Code Duplication
 What it measures: Repeated blocks of code.
 
@@ -45,12 +44,11 @@ Why it matters: Makes maintenance and debugging harder.
 
 Example:
 
-c
-Always show details
-
-Copy
+```
 void updateSensor1() { readADC(); filterData(); computeAverage(); }
 void updateSensor2() { readADC(); filterData(); computeAverage(); }
+```
+
 4. Halstead Metrics
 What it measures: Uses operators and operands to estimate complexity and effort.
 
@@ -74,27 +72,21 @@ What it measures: Ratio of comments to code.
 Why it matters: Aids maintainability.
 
 Example:
-
-c
-Always show details
-
-Copy
+```
 // Retry counter for failed attempts
 int retryCount = 1;
+```
 8. Function/Module Coupling
 What it measures: How interconnected modules are.
 
 Why it matters: High coupling = fragile code.
 
 Example:
-
-c
-Always show details
-
-Copy
+```
 void appFunction() {
     sensorDriverInit();
 }
+```
 9. Fan-In / Fan-Out
 What it measures:
 
@@ -103,26 +95,25 @@ Fan-In: How many modules call this one?
 Fan-Out: How many modules it calls?
 
 Example:
-
-c
-Always show details
-
-Copy
+```
 void controlLoop() {
     readSensors();
     filterData();
     controlMotor();
     logTelemetry();
 }
+```
 📌 Summary Table
-Metric	Measures	Why it Matters	Good Tools
-Cyclomatic Complexity	Logic branches in code	Simpler code = fewer bugs	SonarQube, Understand
-LOC	Code volume	Indicates potential complexity	cloc, CLOC++, VSCode
-Duplication	Repeated logic	Increases bugs and size	SonarQube, CppCheck
-Halstead Metrics	Cognitive load	Measures maintainability	Understand
-Maintainability Index	Overall maintainability	Composite health score	Visual Studio, SonarQube
-Code Coverage	Test effectiveness	Higher = better test assurance	gcov, Unity, Bullseye
-Comment Density	Documentation sufficiency	Clarifies intent and maintainability	CLOC, VSCode
-Coupling	Module interdependence	Loosely coupled = more flexible	Understand, Lizard
-Fan-In / Fan-Out	Function/module responsibility	Too high = fragile or bloated design	Understand, Lizard
+| Metric                | Measures                       | Why it Matters                       | Good Tools               |
+| --------------------- | ------------------------------ | ------------------------------------ | ------------------------ |
+| Cyclomatic Complexity | Logic branches in code         | Simpler code = fewer bugs            | SonarQube, Understand    |
+| LOC                   | Code volume                    | Indicates potential complexity       | cloc, CLOC++, VSCode     |
+| Duplication           | Repeated logic                 | Increases bugs and size              | SonarQube, CppCheck      |
+| Halstead Metrics      | Cognitive load                 | Measures maintainability             | Understand               |
+| Maintainability Index | Overall maintainability        | Composite health score               | Visual Studio, SonarQube |
+| Code Coverage         | Test effectiveness             | Higher = better test assurance       | gcov, Unity, Bullseye    |
+| Comment Density       | Documentation sufficiency      | Clarifies intent and maintainability | CLOC, VSCode             |
+| Coupling              | Module interdependence         | Loosely coupled = more flexible      | Understand, Lizard       |
+| Fan-In / Fan-Out      | Function/module responsibility | Too high = fragile or bloated design | Understand, Lizard       |
+
 """			
