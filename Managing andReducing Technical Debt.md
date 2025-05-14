@@ -1,4 +1,4 @@
-Strategies for Managing & Reducing Technical Debt
+## Strategies for Managing & Reducing Technical Debt
 These strategies aren't just theory—they must work within your constraints (budget, deadlines, legacy systems, etc.). Let's explore each:
 
 1. Prioritizing Technical Debt
