@@ -1,9 +1,10 @@
 🧮 What is Technical Debt Ratio?
-The Technical Debt Ratio (TDR) is a metric that helps you measure how much technical debt your code has, in relation to the total size or cost of the codebase.
+> The Technical Debt Ratio (TDR) is a metric that helps you measure how much technical debt your code has, in relation to the total size or cost of the codebase.
 
 🟦 Simple Formula:
+```
 Technical Debt Ratio = (Remediation Cost / Development Cost) × 100%
-
+```
 Remediation Cost: The estimated effort (usually in hours or dollars) to fix all the problems in the code.
 
 Development Cost: The estimated effort it took to write the code (based on size, lines of code, etc.).
@@ -12,8 +13,9 @@ Development Cost: The estimated effort it took to write the code (based on size,
 "How much of your code is 'bad enough' that it needs fixing?"
 
 Imagine you wrote a firmware module that took 100 hours to build. A static analysis tool says fixing all code smells and design issues will take 10 hours.
-
+```
 TDR = (10 / 100) × 100% = 10%
+```
 This means 10% of your development time is tied up in technical debt.
 
 ✅ Interpretation Guide:
@@ -50,11 +52,9 @@ Global variables all over
 Tool estimates 40 hours to fix
 
 If the estimated dev time for this code is 200 hours:
-
-ini
-Copy
-Edit
+```
 TDR = (40 / 200) × 100% = 20%
+```
 This is a warning sign: You should prioritize refactoring before adding more features.
 
 📌 Summary
