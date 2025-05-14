@@ -126,21 +126,24 @@ Ask: What debt did we add? What debt did we reduce?
  #### Interactive Technical Debt Register Templates
 - ClickUp Technical Debt Register Template
 ClickUp provides a customizable template designed for documenting, prioritizing, and managing technical debt over time. This template offers an organized framework for tech teams to integrate debt management into their everyday workflow.
-🔗 ClickUp Technical Debt Register Template
+🔗 [ClickUp Technical Debt Register Template](https://clickup.com/templates/technical-debt-register-t-900902395209)
+
 
 - Lark Technical Debt Register Template
 Lark offers a template that provides a clear overview of all technical debts, making it easier to identify patterns, prioritize issues, and track progress over time. This template is useful for teams looking to maintain visibility into their technical debt landscape.
-🔗 Lark Technical Debt Register Template
+🔗 [Lark Technical Debt Register Template](https://www.larksuite.com/en_us/templates/technical-debt-register-template)
+
 
 
 #### Webinars and Video Demonstrations
 - Forrester's Webinar: New Tools and Strategies for Managing Technical Debt
 Forrester hosted an on-demand webinar showcasing a new approach to mitigating technical debt, including a demonstration of their Technical Debt Modernization and Migration Scenario Tool. This session explores the impact of technical debt and provides strategies for effective management.
-🔗 Forrester's Webinar
+
+🔗 [Forrester's Webinar](https://www.forrester.com/technology/technical-debt_webinar/)
 
 - YouTube: Technical Debt – Identify, Visualize, and Manage Based on Impact
 This tutorial demonstrates how to visualize codebases of any size and pinpoint technical debt using hotspot maps. It's a practical guide for developers looking to understand and manage technical debt visually.
-🔗 Watch on YouTube
+🔗 [Watch on YouTube](https://www.youtube.com/watch?v=RDImIpXv75Q)
 
 
 ### Open-Source Tools for Technical Debt Management
@@ -153,23 +156,25 @@ SonarQube is a widely-used open-source platform for continuous inspection of cod
 - Quality gate and leak period concepts
 
 
-🔗 SonarQube Community Edition
+🔗 [SonarQube Community Edition](https://www.sonarsource.com/products/sonarqube/downloads/)
 
 Technical Debt Record (TDR) Generator
 This Go-based tool helps teams systematically document and address technical debt within their projects by generating Technical Debt Records (TDRs) in various formats.
 
-🔗 TDR Generator on GitHub
+🔗 [TDR Generator on GitHub](https://github.com/ms1963/TechnicalDebtRecords)
 
 DebtViz
 DebtViz is an innovative tool designed to automatically detect, classify, visualize, and monitor various types of Self-Admitted Technical Debt (SATD) in source code comments and issue tracking systems. It employs a Convolutional Neural Network-based approach for detection.
 
-🔗 DebtViz GitHub Repository
-📺 DebtViz Demo Video
+🔗  [DebtViz GitHub Repository](https://github.com/yikun-li/visdom-satd-management-system)
+
+📺  [DebtViz Demo Video](https://www.youtube.com/watch?v=QXH6Bj0HQew)
 
 SATDBailiff
 SATDBailiff is a tool that identifies and tracks Self-Admitted Technical Debt in software projects by analyzing source code comments. It reports all associated changes, including updates and removals of SATD comments.
 
-🔗 SATDBailiff on arXiv
+🔗  [SATDBailiff on arXiv](https://arxiv.org/abs/2107.00073)
+
 
 
  
