@@ -125,3 +125,14 @@ A function named doItAll() spans 300 lines and touches multiple subsystems.
 | Poor Communication    | Teams working in silos                          | API integration problems due to lack of coordination   |
 | Lack of Refactoring   | Continuous feature development without cleanup  | Accumulation of legacy code that no one wants to touch |
 
+
+| Symptom           | Description                         | Real-world Scenario                             |
+| ----------------- | ----------------------------------- | ----------------------------------------------- |
+| Frequent Bugs     | Code breaks often                   | Login fix breaks profile feature                |
+| Slow Onboarding   | New devs take long to be productive | No documentation, messy codebase                |
+| Low Test Coverage | Few or no automated tests           | Team fears making changes                       |
+| Repeated Fixes    | Same module breaks repeatedly       | Patch fixes for the payment system every sprint |
+| Slow Development  | Features take longer over time      | Simple features become complex to implement     |
+| Unreadable Code   | Messy, unstructured code            | Functions like `doItAll()` that do too much     |
+
+
