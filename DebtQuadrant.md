@@ -1,4 +1,4 @@
-- What is the Debt Quadrant? (Martin Fowler’s Model):**
+### What is the Debt Quadrant? (Martin Fowler’s Model)
 
   - **Deliberate & Prudent**
 
