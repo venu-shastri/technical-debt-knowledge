@@ -47,8 +47,6 @@ or if its environment needs attention.
 
 
 ```C++
-// --- Technical Debt Based Design in C++ with File-Based Simulation ---
-// Still monolithic and procedural, with file I/O to simulate real-world input
 
 #include <iostream>
 #include <fstream>
@@ -140,9 +138,6 @@ Example input file (cnc_data.txt):
 
 
 ```C
-// --- Technical Debt Based Design in C with File Input Simulation ---
-// No modularity, no error handling, hardcoded logic
-
 #include <stdio.h>
 #include <stdlib.h>
 
