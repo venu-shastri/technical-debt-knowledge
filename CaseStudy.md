@@ -208,3 +208,81 @@ Example input file (cnc_data.txt):
 36.0 0.04 300 0x00
 */
 ```
+
+
+##  Scenario: Automotive Safety Monitoring System
+You're tasked with writing firmware for a basic car safety monitor. The system runs on a microcontroller and receives sensor inputs for:
+📈 Monitored Data
+Brake pad thickness (in mm):
+ - Reported every 10 minutes.
+Alert if less than 3.0 mm.
+ - Tire pressure (in PSI):
+ - One reading per tire.
+ - Alert if any tire is below 30 PSI or above 35 PSI.
+Engine temperature (in Celsius):
+ - Reported every minute.
+ - Alert if above 110°C.
+
+#### Crash sensor status code (at boot-up):
+
+Code	Meaning
+0xFF	All OK
+0x00	Sensor disconnected
+0x01	Sensor calibration error
+0x02	Impact detected – service required
+
+```C
+#include <stdio.h>
+
+void check_brake_thickness(float mm) {
+    if (mm < 3.0) {
+        printf("ALERT: Brake pads worn out! (Safety)\n");
+    }
+}
+
+void check_tire_pressure(float fl, float fr, float rl, float rr) {
+    if (fl < 30 || fl > 35) printf("ALERT: Front-left tire pressure out of range!\n");
+    if (fr < 30 || fr > 35) printf("ALERT: Front-right tire pressure out of range!\n");
+    if (rl < 30 || rl > 35) printf("ALERT: Rear-left tire pressure out of range!\n");
+    if (rr < 30 || rr > 35) printf("ALERT: Rear-right tire pressure out of range!\n");
+}
+
+void check_engine_temp(float tempC) {
+    if (tempC > 110) {
+        printf("ALERT: Engine overheating!\n");
+    }
+}
+
+void check_crash_sensor(int code) {
+    switch (code) {
+        case 0xFF:
+            printf("Crash sensor OK\n");
+            break;
+        case 0x00:
+            printf("ALERT: Crash sensor disconnected!\n");
+            break;
+        case 0x01:
+            printf("ALERT: Crash sensor calibration error!\n");
+            break;
+        case 0x02:
+            printf("ALERT: Impact detected! Service required!\n");
+            break;
+        default:
+            printf("ALERT: Unknown crash sensor status!\n");
+    }
+}
+
+int main() {
+    float brake = 2.5;
+    float fl = 32.0, fr = 28.0, rl = 34.0, rr = 36.0;
+    float engineTemp = 115.0;
+    int crashCode = 0x01;
+
+    check_brake_thickness(brake);
+    check_tire_pressure(fl, fr, rl, rr);
+    check_engine_temp(engineTemp);
+    check_crash_sensor(crashCode);
+
+    return 0;
+}
+```
