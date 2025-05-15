@@ -212,13 +212,15 @@ Example input file (cnc_data.txt):
 
 ##  Scenario: Automotive Safety Monitoring System
 You're tasked with writing firmware for a basic car safety monitor. The system runs on a microcontroller and receives sensor inputs for:
-📈 Monitored Data
+#### 📈 Monitored Data
 Brake pad thickness (in mm):
  - Reported every 10 minutes.
+   
 Alert if less than 3.0 mm.
  - Tire pressure (in PSI):
  - One reading per tire.
  - Alert if any tire is below 30 PSI or above 35 PSI.
+   
 Engine temperature (in Celsius):
  - Reported every minute.
  - Alert if above 110°C.
