@@ -1,6 +1,6 @@
 📉 Impacts of Technical Debt
 
-| **Time Horizon** | **Category**          | **Impact Description**                                           | **Example (Embedded)**                                |
+| **Time Horizon** | **Category**          | **Impact Description**                                           | **Example**                                |
 | ---------------- | --------------------- | ---------------------------------------------------------------- | ----------------------------------------------------- |
 | Short-term       | Development Velocity  | Faster initial development at the cost of cutting corners        | Skipping tests or hardcoding delays to meet deadlines |
 | Short-term       | Product Delivery      | Quicker time-to-market with less stability                       | Releasing without full validation                     |
