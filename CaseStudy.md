@@ -290,6 +290,9 @@ int main() {
 ```
 
 ### 25 Color Code Mannual
+---
+https://en.m.wikipedia.org/wiki/File:25_pair_color_code_chart.svg
+
 ```c
 #include <stdio.h>
 #include <assert.h>
