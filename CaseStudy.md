@@ -208,7 +208,128 @@ Example input file (cnc_data.txt):
 36.0 0.04 300 0x00
 */
 ```
+```
+C#
+using System;
+using System.Globalization;
+using System.IO;
 
+public class CNCMachineMonitor
+{
+    private float temperature;
+    private float dimensionVariation;
+    private int continuousOperationMinutes;
+    private int selfTestCode;
+
+    public void UpdateTemperature(float valueCelsius)
+    {
+        temperature = valueCelsius;
+
+        if (temperature > 35.0f)
+        {
+            Console.WriteLine("ALERT: High temperature detected (Environment)");
+        }
+    }
+
+    public void UpdateDimensionVariation(float variationMM)
+    {
+        dimensionVariation = variationMM;
+
+        if (dimensionVariation > 0.05f)
+        {
+            Console.WriteLine("ALERT: Part-dimension variation too high (Machine)");
+        }
+    }
+
+    public void UpdateContinuousOperation(int minutes)
+    {
+        continuousOperationMinutes = minutes;
+
+        if (continuousOperationMinutes > 360)
+        {
+            Console.WriteLine("ALERT: Continuous operation exceeded 6 hours (Machine)");
+        }
+    }
+
+    public void CheckSelfTestCode(int code)
+    {
+        selfTestCode = code;
+
+        switch (code)
+        {
+            case 0xFF:
+                Console.WriteLine("Self-test OK");
+                break;
+
+            case 0x00:
+                Console.WriteLine("ALERT: No data from machine (Environment)");
+                break;
+
+            case 0x01:
+                Console.WriteLine("ALERT: Controller board failure (Machine)");
+                break;
+
+            case 0x02:
+                Console.WriteLine("ALERT: Configuration data corrupted (Machine)");
+                break;
+
+            default:
+                Console.WriteLine("ALERT: Unknown self-test code (Machine)");
+                break;
+        }
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        CNCMachineMonitor monitor = new CNCMachineMonitor();
+
+        string filePath = "cnc_data.txt";
+
+        if (!File.Exists(filePath))
+        {
+            Console.Error.WriteLine("Error opening input file.");
+            return;
+        }
+
+        foreach (string line in File.ReadLines(filePath))
+        {
+            if (string.IsNullOrWhiteSpace(line))
+                continue;
+
+            string[] values = line.Split(
+                (char[])null,
+                StringSplitOptions.RemoveEmptyEntries);
+
+            if (values.Length != 4)
+                continue;
+
+            float temp = float.Parse(values[0], CultureInfo.InvariantCulture);
+            float variation = float.Parse(values[1], CultureInfo.InvariantCulture);
+            int minutes = int.Parse(values[2], CultureInfo.InvariantCulture);
+
+            // Remove optional 0x prefix and parse hexadecimal value.
+            string hexValue = values[3].StartsWith("0x", StringComparison.OrdinalIgnoreCase)
+                ? values[3].Substring(2)
+                : values[3];
+
+            int selfTest = int.Parse(
+                hexValue,
+                NumberStyles.HexNumber,
+                CultureInfo.InvariantCulture);
+
+            monitor.UpdateTemperature(temp);
+            monitor.UpdateDimensionVariation(variation);
+            monitor.UpdateContinuousOperation(minutes);
+            monitor.CheckSelfTestCode(selfTest);
+
+            Console.WriteLine("---");
+        }
+    }
+}
+```
 
 ##  Scenario: Automotive Safety Monitoring System
 You're tasked with writing firmware for a basic car safety monitor. The system runs on a microcontroller and receives sensor inputs for:
