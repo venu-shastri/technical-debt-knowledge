@@ -1,0 +1,47 @@
+1.Technical Debt Definition 
+       Feelings & Situations
+       Maintenance Cos & Context Loss
+2.Classification
+      SDLC Phases
+     Debt Quadrant 
+
+3.Causes and Symptoms
+
+4.Impact
+       People and Project Economics  
+
+5.Risk
+
+------------------------------------------------------------------------------
+Code debt 
+      Clean Code practices , principles & patterns , paradigms 
+     Cognitive Complexity
+    Cyclomatic Complexity = 5
+     C , C++ , python , java ,C#, Typescript.......
+Documentation debt 
+Testing  debt
+    unit testable
+
+
+----------
+TDD
+Mutation Testing
+Architecture Fitness Function
+LeadTime
+Repowise
+
+
+Testable.  = SOLID principles
+     Deterministic Code , Pure Functions
+     Measurable Points
+     Abstract Dependencies  - MOCK , STUB
+
+
+SBOM - Software Bill of Material
+                Blackduck
+
+
+Technical Debt Register
+Assessment , Metric based Tracker and Mitigation Plan
+5 Ws 
+      What , Why, When , Where, Who
