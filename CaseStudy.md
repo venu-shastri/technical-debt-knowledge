@@ -438,3 +438,85 @@ int main() {
 }
 
 ```
+```
+#include <stdio.h>
+#include <assert.h>
+
+// Color data structure
+typedef struct {
+    const char* major;
+    const char* minor;
+} Color;
+
+// Abstract output dependency
+typedef void (*ColorPrinter)(int index, const Color* color);
+
+// Responsible only for printing to console
+void consoleColorPrinter(int index, const Color* color)
+{
+    printf("%2d | %-8s | %-8s\n",
+           index, color->major, color->minor);
+}
+
+// Responsible for generating color combinations
+int generateColorMap(
+    const char* majorColors[],
+    int majorCount,
+    const char* minorColors[],
+    int minorCount,
+    ColorPrinter printer)
+{
+    int index = 0;
+
+    for (int i = 0; i < majorCount; i++) {
+        for (int j = 0; j < minorCount; j++) {
+
+            Color color = {
+                majorColors[i],
+                minorColors[j]
+            };
+
+            // Delegate output through abstraction
+            if (printer != NULL) {
+                printer(index, &color);
+            }
+
+            index++;
+        }
+    }
+
+    return index;
+}
+
+// Application entry point
+int main()
+{
+    const char* majorColors[] = {
+        "White", "Red", "Black", "Yellow", "Violet"
+    };
+
+    const char* minorColors[] = {
+        "Blue", "Orange", "Green", "Brown", "Slate"
+    };
+
+    int majorCount =
+        sizeof(majorColors) / sizeof(majorColors[0]);
+
+    int minorCount =
+        sizeof(minorColors) / sizeof(minorColors[0]);
+
+    int result = generateColorMap(
+        majorColors,
+        majorCount,
+        minorColors,
+        minorCount,
+        consoleColorPrinter
+    );
+
+    assert(result == 25);
+
+    printf("All is well!\n");
+
+    return 0;
+}
+```
